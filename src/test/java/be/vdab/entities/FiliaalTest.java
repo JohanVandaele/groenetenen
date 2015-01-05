@@ -22,10 +22,10 @@ public class FiliaalTest
 	}
 	
 	@Test
-	public void getNaam()
+	public void get()
 	{
-		//System.out.println("----------->"+filiaal.getNaam());
 		assertEquals("FiliaalTest", filiaal.getNaam());
+		assertEquals(new BigDecimal(100), filiaal.getWaardeGebouw());
 	}
 }
 
