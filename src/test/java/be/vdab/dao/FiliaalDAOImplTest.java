@@ -44,6 +44,7 @@ public class FiliaalDAOImplTest
 		// Met JpaRepository
 		filiaal = filiaalDAO.save(filiaal);
 
-		Assert.assertNotEquals(0, filiaal.getId()); // id moet autonumber hebben:
+//		Assert.assertNotEquals(0, filiaal.getId()); // id moet autonumber hebben:
+		Assert.assertNotEquals(1, filiaal.getId()); // id moet autonumber hebben:
 	}
 }

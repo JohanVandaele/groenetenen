@@ -33,6 +33,12 @@ import be.vdab.valueobjects.Adres;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * 
+ * 
+ * @author Johan Vandaele
+ *
+ */
 @XmlRootElement
 @Entity
 @Table(name = "filialen")
