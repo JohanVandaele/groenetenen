@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- Sommige queries kan je niet uitdrukken als een vertaling van een method naam. -->
+<!-- Je schrijft die queries dan toch als named queries in orm.xml. -->
+
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+		http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd" version="2.1">
+
+<!--	Niet meer nodig (29.6)- vervangen door JpaRepository -->
+<!-- 	<named-query name='Filiaal.findAll'> -->
+<!-- 		<query>select f from Filiaal f order by f.naam</query> -->
+<!-- 	</named-query> -->
+
+<!--	Niet meer nodig (29.6)- vervangen door JpaRepository -->
+<!-- 	<named-query name='Filiaal.findByPostcodeReeks'> -->
+<!-- 		<query>select f from Filiaal f where f.adres.postcode between :van and :tot order by f.naam</query> -->
+<!-- 	</named-query> -->
+
+<!--	Niet meer nodig (29.6)- vervangen door JpaRepository -->
+<!-- 	<named-query name='Filiaal.findAantal'> -->
+<!-- 		<query>select count(f) from Filiaal f</query> -->
+<!-- 	</named-query> -->
+	
+	<named-query name='Filiaal.findMetHoogsteWaardeGebouw'>
+		<query>
+			select f from Filiaal f where f.waardeGebouw=(select max(waardeGebouw) from Filiaal)
+		</query>
+	</named-query>
+
+<!-- Cursus ???29.6.1??? -->	
+<!-- 	<named-query name='Filiaal.findGemiddeldeWaardeGebouwInGemeente'> -->
+<!--   		<query>select avg(waardeGebouw) from Filiaal f where f.gemeente = :gemeente</query> -->
+<!-- 	</named-query> -->
+
+	<named-query name='Filiaal.findGemiddeldeWaardeGebouwInGemeente'>
+  		<query>
+  			select avg(waardeGebouw) from Filiaal f
+  			where f.adres.gemeente = :gemeente
+  		</query>
+	</named-query>
+</entity-mappings>
