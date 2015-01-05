@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 
- * 
+ * Een <strong>filiaal</strong>
  * @author Johan Vandaele
  *
  */
@@ -93,8 +93,19 @@ public class Filiaal implements Serializable
 	// -----------
 	// Constructor
 	// -----------
+	/**
+	* Maakt een Filiaal object
+	*/
 	public Filiaal() {}
 	
+	/**
+	* Maakt een Filiaal object
+	* @param naam De naam van het filiaal
+	* @param hoofdFiliaal Indicatie voor hoofdgebouw/bijgebouw 
+	* @param waardeGebouw De waarde van het gebouw
+	* @param inGebruikName Datum van ingebruikname
+	* @param adres Het adres van het filiaal
+	*/
 	public Filiaal(String naam,boolean hoofdFiliaal,BigDecimal waardeGebouw,Date inGebruikName, Adres adres)
 	{
 		this.naam = naam;
@@ -104,6 +115,15 @@ public class Filiaal implements Serializable
 		this.adres = adres;
 	}
 	
+	/**
+	* Maakt een Filiaal object
+	* @param id Identificatie van het filiaal
+	* @param naam De naam van het filiaal
+	* @param hoofdFiliaal Indicatie voor hoofdgebouw/bijgebouw 
+	* @param waardeGebouw De waarde van het gebouw
+	* @param inGebruikName Datum van ingebruikname
+	* @param adres Het adres van het filiaal
+	*/
 	public Filiaal(long id, String naam,boolean hoofdFiliaal,BigDecimal waardeGebouw,Date inGebruikName, Adres adres)
 	{
 		this(naam, hoofdFiliaal, waardeGebouw,inGebruikName, adres);
@@ -113,54 +133,106 @@ public class Filiaal implements Serializable
 	// ----------
 	// Properties
 	// ----------
+	/**
+	* Geeft de id terug
+	* @return de id
+	*/	
 	public long getId() {
 		return id;
 	}
 
+	/**
+	* toekenning van de id
+	* @param de id
+	*/	
 	public void setId(long id) {
 		this.id = id;
 	}
 
+	/**
+	* Geeft de naam terug
+	* @return de naam
+	*/	
 	public String getNaam() {
 		return naam;
 	}
 
+	/**
+	* toekenning van de naam
+	* @param de naam
+	*/	
 	public void setNaam(String naam) {
 		this.naam = naam;
 	}
 
+	/**
+	* Geeft indicatie terug voor hoofdfiliaal
+	* @return hoofdfiliaal
+	*/	
 	public boolean isHoofdFiliaal() {
 		return hoofdFiliaal;
 	}
 
+	/**
+	* Toekenning voor hoofdfiliaal
+	* @param hoofdfiliaal
+	*/	
 	public void setHoofdFiliaal(boolean hoofdFiliaal) {
 		this.hoofdFiliaal = hoofdFiliaal;
 	}
 
+	/**
+	* Geeft de waarde van het gebouw terug
+	* @return waarde van het gebouw
+	*/	
 	public BigDecimal getWaardeGebouw() {
 		return waardeGebouw;
 	}
 
+	/**
+	* toekenning van de waarde van het gebouw
+	* @param de waarde van het gebouw
+	*/	
 	public void setWaardeGebouw(BigDecimal waardeGebouw) {
 		this.waardeGebouw = waardeGebouw;
 	}
 
+	/**
+	* Geeft de datum van ingebruikname terug
+	* @return de datum van ingebruikname
+	*/	
 	public Date getInGebruikName() {
 		return inGebruikName;
 	}
 
+	/**
+	* Toekenning van de datum van ingebruikname
+	* @param datum van ingebruikname
+	*/	
 	public void setInGebruikName(Date inGebruikName) {
 		this.inGebruikName = inGebruikName;
 	}
 
+	/**
+	* Geeft het adres terug
+	* @return het adres
+	*/	
 	public Adres getAdres() {
 		return adres;
 	}
 
+	/**
+	* Toekenning van het adres
+	* @param het adres
+	*/	
 	public void setAdres(Adres adres) {
 		this.adres = adres;
 	}
 
+	/**
+	* Geeft de Serialversionuid terug
+	* @return Serialversionuid
+	*/	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -168,6 +240,9 @@ public class Filiaal implements Serializable
 	// -------
 	// Methods
 	// -------
+	/**
+	* Zet de waarde van het gebouw op 0
+	*/
 	public void afschrijven()
 	{
 		this.waardeGebouw = BigDecimal.ZERO;
