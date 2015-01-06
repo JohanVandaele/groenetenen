@@ -143,7 +143,7 @@ public class Filiaal implements Serializable
 
 	/**
 	* toekenning van de id
-	* @param de id
+	* @param id
 	*/	
 	public void setId(long id) {
 		this.id = id;
@@ -159,7 +159,7 @@ public class Filiaal implements Serializable
 
 	/**
 	* toekenning van de naam
-	* @param de naam
+	* @param naam
 	*/	
 	public void setNaam(String naam) {
 		this.naam = naam;
@@ -175,7 +175,7 @@ public class Filiaal implements Serializable
 
 	/**
 	* Toekenning voor hoofdfiliaal
-	* @param hoofdfiliaal
+	* @param hoofdFiliaal
 	*/	
 	public void setHoofdFiliaal(boolean hoofdFiliaal) {
 		this.hoofdFiliaal = hoofdFiliaal;
@@ -191,7 +191,7 @@ public class Filiaal implements Serializable
 
 	/**
 	* toekenning van de waarde van het gebouw
-	* @param de waarde van het gebouw
+	* @param waardeGebouw
 	*/	
 	public void setWaardeGebouw(BigDecimal waardeGebouw) {
 		this.waardeGebouw = waardeGebouw;
@@ -207,7 +207,7 @@ public class Filiaal implements Serializable
 
 	/**
 	* Toekenning van de datum van ingebruikname
-	* @param datum van ingebruikname
+	* @param inGebruikName
 	*/	
 	public void setInGebruikName(Date inGebruikName) {
 		this.inGebruikName = inGebruikName;
@@ -223,7 +223,7 @@ public class Filiaal implements Serializable
 
 	/**
 	* Toekenning van het adres
-	* @param het adres
+	* @param adres
 	*/	
 	public void setAdres(Adres adres) {
 		this.adres = adres;
